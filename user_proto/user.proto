@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package user_proto;
+
+service UserService {
+    rpc CreateUser(CreateUserReq) returns (GetUserRes);
+    rpc GetUser(GetUserReq) returns (GetUserRes);
+    rpc UpdateUser(UpdateUserReq) returns (UpdateUserRes);
+    rpc DeleteUser(DeleteUserReq) returns (Message);
+    rpc SearchUser(SearchUserReq) returns (UserList);
+}
+
+message CreateUserReq {
+
+}
+message SearchUserReq {
+
+}
+message GetUserReq {
+
+}
+message UpdateUserReq {
+
+}
+message DeleteUserReq {
+
+}
+message Message {
+
+}
+message GetUserRes {
+
+}
+message UpdateUserRes {
+
+}
+message UserList {
+
+}

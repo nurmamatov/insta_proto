@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package post_proto;
+
+service PostService {
+    rpc CreatePost(CreatePostReq) returns (GetPostRes);
+    rpc GetPost(GetPostReq) returns (GetPostRes);
+    rpc UpdatePost(UpdatePostReq) returns (GetPostRes);
+    rpc DeletePost(DeletePostReq) returns (Message);
+    rpc LikeOrDislike(LikePostReq) returns (Empty);
+}
+
+message CreatePostReq {
+
+}
+message CreatePostResp {
+
+}
+message GetPostReq {
+
+}
+message UpdatePostReq {
+
+}
+message DeletePostReq {
+
+}
+message LikePostReq {
+
+}
+message Empty {
+
+}
+message Message {
+
+}
+message GetPostRes {
+
+}
