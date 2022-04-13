@@ -4,7 +4,6 @@ package user_proto;
 
 service UserService {
     rpc CreateUser(CreateUserReq) returns (GetUserRes);
-    rpc Login(LoginReq) returns (GetUserRes);
     rpc GetUser(GetUserReq) returns (GetUserRes);
     rpc UpdateUser(UpdateUserReq) returns (GetUserRes);
     rpc DeleteUser(DeleteUserReq) returns (Message);
@@ -20,10 +19,6 @@ message CreateUserReq {
     bool gender = 6;
     string password = 7;
     string photo = 8;
-}
-message LoginReq {
-    string username = 1;
-    string password = 2;
 }
 message SearchUserReq {
     string search = 1;
