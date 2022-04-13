@@ -26,7 +26,7 @@ message LoginReq {
     string password = 2;
 }
 message SearchUserReq {
-    
+    string search = 1;
 }
 message GetUserReq {
     string user_id = 1;
@@ -40,9 +40,11 @@ message UpdateUserReq {
     string email = 6;
     string photo = 7;
     string gender = 8;
+    string password = 9;
 }
 message DeleteUserReq {
-
+    string user_id = 1;
+    string password = 2;
 }
 message Message {
     string message = 1;
