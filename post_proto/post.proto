@@ -8,26 +8,24 @@ service PostService {
     rpc UpdatePost(UpdatePostReq) returns (GetPostRes);
     rpc DeletePost(DeletePostReq) returns (Message);
     rpc ListUserPosts(ListPostsReq) returns (ListPostsRes);
-    rpc Like(LikePostReq) returns (Empty);
+    rpc Like(LikePostReq) returns (Bool);
+    rpc DeleteLike(LikeDeleteReq) returns (Bool);
 }
 
 message CreatePostReq {
-    string post_id = 1;
-    string user_id = 2;
-    string title = 3;
-    string description = 4;
-    string image = 5;
-    string created_at = 6;
+    string user_id = 1;
+    string title = 2;
+    string description = 3;
+    string image = 4;
 }
 message GetPostReq {
-    string post_id = 1;
+    string user_id = 1;
+    string post_id = 2;
 }
 message UpdatePostReq {
     string post_id = 1;
-    string title = 3;
-    string description = 4;
-    string image = 5;
-    string updated_at = 6;
+    string title = 2;
+    string description = 3;
 }
 message DeletePostReq {
     string post_id = 1;
@@ -39,10 +37,12 @@ message ListPostsRes {
     repeated GetPostRes posts = 1;
 }
 message LikePostReq {
-    string like_id = 1;
     string post_id = 2;
     string user_id = 3;
-    bool   like    = 4;
+}
+message LikeDeleteReq {
+    string user_id = 1;
+    string post_id = 2;
 }
 message Empty {}
 
@@ -52,9 +52,13 @@ message Message {
 message GetPostRes {
     string post_id = 1;
     string user_id = 2;
-    string title = 3;
-    string description = 4;
-    string image = 5;
-    int64 likes = 6;
-    string created_at = 7;
+    bool   check_like = 3;
+    string title = 4;
+    string description = 5;
+    string image = 6;
+    int64 likes = 7;
+    string created_at = 8;
+}
+message Bool {
+    bool result = 1;
 }
