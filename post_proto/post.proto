@@ -7,33 +7,54 @@ service PostService {
     rpc GetPost(GetPostReq) returns (GetPostRes);
     rpc UpdatePost(UpdatePostReq) returns (GetPostRes);
     rpc DeletePost(DeletePostReq) returns (Message);
-    rpc LikeOrDislike(LikePostReq) returns (Empty);
+    rpc ListUserPosts(ListPostsReq) returns (ListPostsRes);
+    rpc Like(LikePostReq) returns (Empty);
 }
 
 message CreatePostReq {
-
-}
-message CreatePostResp {
-
+    string post_id = 1;
+    string user_id = 2;
+    string title = 3;
+    string description = 4;
+    string image = 5;
+    string created_at = 6;
 }
 message GetPostReq {
-
+    string post_id = 1;
 }
 message UpdatePostReq {
-
+    string post_id = 1;
+    string title = 3;
+    string description = 4;
+    string image = 5;
+    string updated_at = 6;
 }
 message DeletePostReq {
-
+    string post_id = 1;
+}
+message ListPostsReq {
+    string user_id = 1;
+}
+message ListPostsRes {
+    repeated GetPostRes posts = 1;
 }
 message LikePostReq {
-
+    string like_id = 1;
+    string post_id = 2;
+    string user_id = 3;
+    bool   like    = 4;
 }
-message Empty {
+message Empty {}
 
-}
 message Message {
-
+    string message = 1;
 }
 message GetPostRes {
-
+    string post_id = 1;
+    string user_id = 2;
+    string title = 3;
+    string description = 4;
+    string image = 5;
+    int64 likes = 6;
+    string created_at = 7;
 }
