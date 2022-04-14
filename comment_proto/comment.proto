@@ -6,7 +6,7 @@ service CommentService {
     rpc CreateComment(CreateCommentReq) returns (GetCommentRes);
     rpc GetComment(GetCommentReq) returns (GetCommentRes);
     rpc UpdateComment(UpdateCommentReq) returns (GetCommentRes);
-    rpc DeleteComment(DeleteCommentReq) returns (Empty);
+    rpc DeleteComment(DeleteCommentReq) returns (Message);
 }
 
 message CreateCommentReq {
