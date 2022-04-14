@@ -21,14 +21,21 @@ message GetCommentReq {
 message UpdateCommentReq {
     string post_id = 1;
     string user_id = 2;
-    string text = 3;
+    string comment_id = 3;
+    string text = 4;
 }
 message DeleteCommentReq {
-    string post_id = 1;
-    string user_id = 2;
+    string user_id = 1;
+    string comment_id = 2;
+}
+message Message {
+    string message = 1;
 }
 message Empty {}
 message GetCommentRes {
     string user_id = 1;
     string text = 2;
+    string created_at = 3;
+    string post_id = 4;
+    string comment_id = 5;
 }
