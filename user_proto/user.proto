@@ -8,6 +8,7 @@ service UserService {
     rpc UpdateUser(UpdateUserReq) returns (GetUserRes);
     rpc DeleteUser(DeleteUserReq) returns (Message);
     rpc SearchUser(SearchUserReq) returns (UserList);
+    rpc Login(LoginReq) returns (GetUserRes);
 }
 
 message CreateUserReq {
@@ -21,10 +22,14 @@ message CreateUserReq {
     string photo = 8;
 }
 message SearchUserReq {
-    string search = 1;
+    string username = 1;
+}
+message LoginReq {
+    string user_id = 1;
+    string password = 2;
 }
 message GetUserReq {
-    string user_id = 1;
+    string username = 1;
 }
 message UpdateUserReq {
     string user_id = 1;
@@ -35,7 +40,10 @@ message UpdateUserReq {
     string email = 6;
     string photo = 7;
     string gender = 8;
-    string password = 9;
+}
+message UpdatePass {
+    string OldPassword = 1;
+    string NewPassword = 2;
 }
 message DeleteUserReq {
     string user_id = 1;
@@ -55,6 +63,10 @@ message GetUserRes {
     bool gender = 8;
     string created_at = 9;
 }
+message SearchRes {
+    string user_id = 1;
+    string username = 2;
+}
 message UserList {
-    repeated GetUserRes users = 1;
+    repeated SearchRes users = 1;
 }
