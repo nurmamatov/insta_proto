@@ -16,7 +16,6 @@ message CreateCommentReq {
 }
 message GetCommentReq {
     string post_id = 1;
-    string user_id = 2;
 }
 message UpdateCommentReq {
     string post_id = 1;
@@ -28,7 +27,10 @@ message DeleteCommentReq {
     string user_id = 2;
 }
 message Empty {}
-message GetCommentRes {
+message Res {
     string user_id = 1;
     string text = 2;
+}
+message GetCommentRes {
+    repeated Res Comments = 1;
 }
