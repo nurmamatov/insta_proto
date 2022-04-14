@@ -10,20 +10,29 @@ service CommentService {
 }
 
 message CreateCommentReq {
-
+    string post_id = 1;
+    string user_id = 2;
+    string text = 3;
 }
 message GetCommentReq {
-
+    string post_id = 1;
 }
 message UpdateCommentReq {
-
+    string comment_id = 1;
+    string user_id = 2;
+    string text = 3;
 }
 message DeleteCommentReq {
-
+    string user_id = 1;
+    string comment_id = 2;
 }
 message Message {
-
+    string message = 1;
 }
 message GetCommentRes {
-
+    string commnet_id = 1;
+    string user_id = 2;
+    string post_id = 3;
+    string text = 4;
+    string created_at = 5;
 }
