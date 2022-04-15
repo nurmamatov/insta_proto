@@ -10,6 +10,7 @@ service UserService {
     rpc SearchUser(SearchUserReq) returns (UserList);
     rpc Login(LoginReq) returns (GetUserRes);
     rpc UpdatePassword(UpdatePass) returns (Message);
+    // rpc GetUserPosts(GetUserPostReq) returns (Posts);
 }
 
 message CreateUserReq {
@@ -63,7 +64,27 @@ message GetUserRes {
     string photo = 7;
     bool gender = 8;
     string created_at = 9;
+    repeated Posts posts = 10;
 }
+message Posts {
+    string post_id = 1;
+    string user_id = 2;
+    bool   check_like = 3;
+    string title = 4;
+    string description = 5;
+    string image = 6;
+    int64 likes = 7;
+    string created_at = 8;
+    repeated Comment comments = 9;
+}
+message Comment {
+    string user_id = 1;
+    string text = 2;
+    string comment_id = 3;
+}
+// message GetUserPostReq {
+//     string user_id = 1;
+// }
 message SearchRes {
     string user_id = 1;
     string username = 2;
