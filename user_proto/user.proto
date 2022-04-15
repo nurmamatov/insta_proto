@@ -44,8 +44,9 @@ message UpdateUserReq {
     string gender = 8;
 }
 message UpdatePass {
-    string oldPassword = 1;
-    string newPassword = 2;
+    string user_id = 1;
+    string oldPassword = 2;
+    string newPassword = 3;
 }
 message DeleteUserReq {
     string user_id = 1;
