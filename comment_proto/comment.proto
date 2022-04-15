@@ -37,4 +37,7 @@ message Res {
 }
 message GetCommentRes {
     repeated Res Comments = 1;
+    string created_at = 2;
+    string post_id = 3;
+    string comment_id = 4;
 }
