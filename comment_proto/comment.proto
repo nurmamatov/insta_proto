@@ -39,6 +39,10 @@ message Res {
     string comment_id = 5;
 }
 message ResG {
-    string user_id = 1;
-    string text = 2;
+    repeated Result comments = 1;
+}
+message Result {
+    string comment_id = 1;
+    string user_id = 2;
+    string text = 3;
 }
