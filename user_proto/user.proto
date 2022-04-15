@@ -10,7 +10,6 @@ service UserService {
     rpc SearchUser(SearchUserReq) returns (UserList);
     rpc Login(LoginReq) returns (GetUserRes);
     rpc UpdatePassword(UpdatePass) returns (Message);
-    // rpc GetUserPosts(GetUserPostReq) returns (Posts);
 }
 
 message CreateUserReq {
@@ -83,9 +82,6 @@ message Comment {
     string text = 2;
     string comment_id = 3;
 }
-// message GetUserPostReq {
-//     string user_id = 1;
-// }
 message SearchRes {
     string user_id = 1;
     string username = 2;
