@@ -25,7 +25,7 @@ message SearchUserReq {
     string username = 1;
 }
 message LoginReq {
-    string user_id = 1;
+    string username = 1;
     string password = 2;
 }
 message GetUserReq {
@@ -42,8 +42,8 @@ message UpdateUserReq {
     string gender = 8;
 }
 message UpdatePass {
-    string OldPassword = 1;
-    string NewPassword = 2;
+    string oldPassword = 1;
+    string newPassword = 2;
 }
 message DeleteUserReq {
     string user_id = 1;
@@ -69,4 +69,7 @@ message SearchRes {
 }
 message UserList {
     repeated SearchRes users = 1;
+}
+message Err {
+    string error = 1;
 }
