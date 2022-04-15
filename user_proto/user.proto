@@ -9,6 +9,7 @@ service UserService {
     rpc DeleteUser(DeleteUserReq) returns (Message);
     rpc SearchUser(SearchUserReq) returns (UserList);
     rpc Login(LoginReq) returns (GetUserRes);
+    rpc UpdatePassword(UpdatePass) returns (Message);
 }
 
 message CreateUserReq {
