@@ -3,9 +3,9 @@ syntax = "proto3";
 package comment_proto;
 
 service CommentService {
-    rpc CreateComment(CreateCommentReq) returns (GetCommentRes);
-    rpc GetComment(GetCommentReq) returns (GetCommentRes);
-    rpc UpdateComment(UpdateCommentReq) returns (GetCommentRes);
+    rpc CreateComment(CreateCommentReq) returns (Res);
+    rpc GetComment(GetCommentReq) returns (Res);
+    rpc UpdateComment(UpdateCommentReq) returns (Res);
     rpc DeleteComment(DeleteCommentReq) returns (Message);
 }
 
